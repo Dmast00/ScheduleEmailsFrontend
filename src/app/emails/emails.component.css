@@ -1,0 +1,16 @@
+.formemailcontainer{
+    width: 75vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 25vh;
+}
+mat-icon{
+    margin-left: 2px;
+}
+.textarea{
+    width: 100%;
+}
