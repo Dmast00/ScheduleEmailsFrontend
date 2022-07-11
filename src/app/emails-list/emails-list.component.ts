@@ -1,6 +1,8 @@
 
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { BackendService } from '../backend.service';
+import { SubjectService } from '../Service/subject.service';
 
 @Component({
   selector: 'app-emails-list',
@@ -9,7 +11,14 @@ import { BackendService } from '../backend.service';
 })
 export class EmailsListComponent implements OnInit {
   EmailList : any = []
-  constructor(private service : BackendService) { }
+  private subscriptionEmail : Subscription;
+
+  constructor(private service : BackendService, private subject : SubjectService) {
+    this.subscriptionEmail = this.subject.getUpdate().subscribe(data =>{
+      this.getEmails();
+      console.log('Receive message')
+    })
+   }
 
   ngOnInit(): void {
     this.getEmails();

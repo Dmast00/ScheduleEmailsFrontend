@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { NgbTimeStruct } from '@ng-bootstrap/ng-bootstrap';
 import { BackendService } from '../backend.service';
+import { SubjectService } from '../Service/subject.service';
+
 
 @Component({
   selector: 'app-emails',
@@ -9,8 +12,9 @@ import { BackendService } from '../backend.service';
 })
 export class EmailsComponent implements OnInit {
   form : FormGroup
+
   
-  constructor(private service : BackendService) { 
+  constructor(private service : BackendService,private subject : SubjectService) { 
     this.form = new FormGroup({
       fromEmail : new FormControl(),
       toEmail : new FormControl(),
@@ -27,11 +31,13 @@ export class EmailsComponent implements OnInit {
     return this.form.controls
   }
 
-  SendEmail(){
+  async SendEmail(){
     console.log(this.form.value)
-    this.service.SendEmail(this.form.value).subscribe(data =>{
+    await this.service.SendEmail(this.form.value).subscribe(data =>{
+      this.sendMessage()
       console.log('Email Sent')
     })
+    
   }
   step = 0;
 
@@ -45,6 +51,10 @@ export class EmailsComponent implements OnInit {
 
   prevStep() {
     this.step--;
+  }
+
+  sendMessage():void {
+    this.subject.sendUpdate('Update List')
   }
 
 }

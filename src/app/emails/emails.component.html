@@ -1,112 +1,119 @@
-<div class="container">
-  <div class="formemailcontainer">
-    <mat-accordion class="example-headers-align" formgroup="form" [formGroup]="form">
-        <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              From Email
-            </mat-panel-title>
-            <mat-panel-description >
-              Type the sender Email
-              <mat-icon>drafts</mat-icon>
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-          <form>
-            <mat-form-field appearance="fill" >
-              <mat-label>Sender Email</mat-label>
-              <input matInput formControlName="fromEmail">
-            </mat-form-field>
-          </form>
 
-          <mat-action-row>
-            <button mat-button color="primary" (click)="nextStep()">Next</button>
-          </mat-action-row>
-        </mat-expansion-panel>
-      
-        <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Destination Email
-            </mat-panel-title>
-            <mat-panel-description>
-              Type the Destionation Email
-              <mat-icon>outgoing_mail</mat-icon>
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-      
-          <mat-form-field appearance="fill">
-            <mat-label >Destination Email</mat-label>
-            <input matInput formControlName="toEmail">
-          </mat-form-field>
-      
-          <mat-action-row>
-            <button mat-button color="warn" (click)="prevStep()">Previous</button>
-            <button mat-button color="primary" (click)="nextStep()">Next</button>
-          </mat-action-row>
-        </mat-expansion-panel>
-      
-        <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Email Subject
-            </mat-panel-title>
-            <mat-panel-description>
-              Type the email Subject
-              <mat-icon>subject</mat-icon>
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-          <mat-form-field appearance="fill">
-            <mat-label >Email Subject</mat-label>
-            <input matInput formControlName="subjectEmail">
-          </mat-form-field>
-          <mat-action-row>
-            <button mat-button color="warn" (click)="prevStep()">Previous</button>
-            <button mat-button color="primary" (click)="nextStep()">Next</button>
-          </mat-action-row>
-        </mat-expansion-panel>
-      
-        <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Email Content
-            </mat-panel-title>
-            <mat-panel-description>
-              Type the email Content
-              <mat-icon>format_size</mat-icon>
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-          <mat-form-field class="textarea" appearance="fill">
-            <mat-label>Add Email Content</mat-label>
-            <textarea matInput placeholder="Ex. Good Morning..." formControlName="PlainTextContent"></textarea>
-          </mat-form-field>
-      
-      
-          <mat-action-row>
-            <button mat-button color="warn" (click)="prevStep()">Previous</button>
-            <button mat-button color="primary" (click)="nextStep()">Next</button>
-          </mat-action-row>
-        </mat-expansion-panel>
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="containerform">
 
-        <mat-expansion-panel [expanded]="step === 4" (opened)="setStep(4)" hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              HTML Email Content
-            </mat-panel-title>
-            <mat-panel-description>
-              Type the HTML email Content
-              <mat-icon>html</mat-icon>
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-          <mat-form-field class="textarea" appearance="fill">
-            <mat-label>Add HTML Email Content</mat-label>
-            <textarea matInput placeholder="Ex. Good Morning..." formControlName="HtmlContent"></textarea>
-          </mat-form-field>
-          <mat-action-row>
-            <button mat-button color="warn" (click)="prevStep()">Previous</button>
-            <button mat-button color="primary" (click)="nextStep()" (click)="SendEmail()">send</button>
-          </mat-action-row>
-        </mat-expansion-panel>
-    </mat-accordion>
+        <div class="formemailcontainer">
+          <mat-accordion class="example-headers-align" formgroup="form" [formGroup]="form">
+              <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    From Email
+                  </mat-panel-title>
+                  <mat-panel-description >
+                    Type the sender Email
+                    <mat-icon>drafts</mat-icon>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <form>
+                  <mat-form-field appearance="fill" >
+                    <mat-label>Sender Email</mat-label>
+                    <input matInput formControlName="fromEmail">
+                  </mat-form-field>
+                </form>
+                <mat-action-row>
+                  <button mat-button color="primary" (click)="nextStep()">Next</button>
+                </mat-action-row>
+              </mat-expansion-panel>    
+              <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Destination Email
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    Type the Destionation Email
+                    <mat-icon>outgoing_mail</mat-icon>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+            
+                <mat-form-field appearance="fill">
+                  <mat-label >Destination Email</mat-label>
+                  <input matInput formControlName="toEmail">
+                </mat-form-field>
+            
+                <mat-action-row>
+                  <button mat-button color="warn" (click)="prevStep()">Previous</button>
+                  <button mat-button color="primary" (click)="nextStep()">Next</button>
+                </mat-action-row>
+              </mat-expansion-panel>
+            
+              <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Email Subject
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    Type the email Subject
+                    <mat-icon>subject</mat-icon>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <mat-form-field appearance="fill">
+                  <mat-label >Email Subject</mat-label>
+                  <input matInput formControlName="subjectEmail">
+                </mat-form-field>
+                <mat-action-row>
+                  <button mat-button color="warn" (click)="prevStep()">Previous</button>
+                  <button mat-button color="primary" (click)="nextStep()">Next</button>
+                </mat-action-row>
+              </mat-expansion-panel>
+              <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Email Content
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    Type the email Content
+                    <mat-icon>format_size</mat-icon>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <mat-form-field class="textarea" appearance="fill">
+                  <mat-label>Add Email Content</mat-label>
+                  <textarea matInput placeholder="Ex. Good Morning..." formControlName="PlainTextContent"></textarea>
+                </mat-form-field>
+                <mat-action-row>
+                  <button mat-button color="warn" (click)="prevStep()">Previous</button>
+                  <button mat-button color="primary" (click)="nextStep()">Next</button>
+                </mat-action-row>
+              </mat-expansion-panel>
+              <mat-expansion-panel [expanded]="step === 4" (opened)="setStep(4)" hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    HTML Email Content
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    Type the HTML email Content
+                    <mat-icon>html</mat-icon>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <mat-form-field class="textarea" appearance="fill">
+                  <mat-label>Add HTML Email Content</mat-label>
+                  <textarea matInput placeholder="Ex. Good Morning..." formControlName="HtmlContent"></textarea>
+                </mat-form-field>
+                <mat-action-row>
+                  <button mat-button color="warn" (click)="prevStep()">Previous</button>
+                  <button mat-button color="primary" (click)="nextStep()" (click)="SendEmail()">send</button>
+                </mat-action-row>
+              </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+        <div class="emaillistcontainer">
+          <div class="listcontainer">
+            <app-emails-list></app-emails-list>
+          </div>
+        </div>
+      </div>
+    </div><!-- /.container-fluid -->
   </div>
 </div>
-<app-emails-list></app-emails-list>

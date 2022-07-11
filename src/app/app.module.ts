@@ -14,6 +14,8 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { MatListModule } from "@angular/material/list";
 import { EmailsListComponent } from './emails-list/emails-list.component';
+import { MatCardModule } from "@angular/material/card";
+
 
 
 
@@ -36,7 +38,8 @@ import { EmailsListComponent } from './emails-list/emails-list.component';
     MatButtonModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatListModule
+    MatListModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

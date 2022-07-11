@@ -1,0 +1,5 @@
+mat-card{
+    height: 44vh;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}

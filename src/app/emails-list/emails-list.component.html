@@ -1,9 +1,9 @@
-<mat-list>
-    <div mat-subheader></div>
-    <mat-list-item *ngFor="let item of EmailList">
-        <mat-icon mat-list-icon>mail</mat-icon>
-        <div mat-line>Send by: {{item.fromEmail}} </div>
-        <div mat-line>Sent to: {{item.toEmail}}</div>
-    </mat-list-item>
-    
-</mat-list>
+<mat-card>
+    <mat-nav-list>
+        <mat-list-item *ngFor="let item of EmailList">
+            <mat-icon mat-list-icon>mail</mat-icon>
+            <div mat-line>Send by: {{item.fromEmail}} </div>
+            <div mat-line>Sent to: {{item.toEmail}}</div>
+        </mat-list-item>
+    </mat-nav-list>
+</mat-card>
