@@ -15,6 +15,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { MatListModule } from "@angular/material/list";
 import { EmailsListComponent } from './emails-list/emails-list.component';
 import { MatCardModule } from "@angular/material/card";
+import { MatDividerModule } from "@angular/material/divider";
 
 
 
@@ -40,7 +41,8 @@ import { MatCardModule } from "@angular/material/card";
     ReactiveFormsModule,
     HttpClientModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
